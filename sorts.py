@@ -28,6 +28,7 @@ def insertion_sort(listy):
             j = i
             ind2 = sortInd
             while j >= 0:
+                comparisons += 1
                 if listy[j] > listy[ind2]:
                     temp = listy[ind2]
                     listy[ind2] = listy[j]
