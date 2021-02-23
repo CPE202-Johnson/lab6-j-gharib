@@ -3,17 +3,15 @@ import time
 
 def selection_sort(listy):
     comparisons = 0
-    if len(listy) == 0:
-        return listy
     ind = -1
     for i in range(len(listy)):
         j = i + 1
         minVal = listy[i]
         while j < len(listy):
+            comparisons += 1
             if listy[j] < minVal:
                 ind = j
                 minVal = listy[j]
-                comparisons += 1
             j += 1
         if minVal < listy[i]:
             listy[ind] = listy[i]
@@ -26,11 +24,11 @@ def insertion_sort(listy):
     for i in range(len(listy) - 1):
         sortInd = i + 1
         if listy[sortInd] < listy[i]:
+            comparisons += 1
             j = i
             ind2 = sortInd
             while j >= 0:
                 if listy[j] > listy[ind2]:
-                    comparisons += 1
                     temp = listy[ind2]
                     listy[ind2] = listy[j]
                     listy[j] = temp
@@ -51,7 +49,7 @@ def main():
     # Generate 5000 random numbers from 0 to 999,999
     randoms = random.sample(range(1000000), 1000)
     start_time = time.time() 
-    comps = selection_sort(randoms)
+    comps = insertion_sort(randoms)
     stop_time = time.time()
     print(comps, stop_time - start_time)
 
