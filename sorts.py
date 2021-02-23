@@ -32,6 +32,8 @@ def insertion_sort(listy):
             j -= 1
             sortInd -= 1
             sortVal = listy[sortInd]
+    if comparisons == 0:
+        comparisons = len(listy) - 1
     return comparisons
 
 
@@ -55,6 +57,6 @@ def main():
     totalComps /= 10
     print("Avg comps: " + str(totalComps) + " | Avg time: " + str("{0:0.3f}".format((stop_time - start_time)/10 * 1000)) + "ms")
 
-    
+
 if __name__ == '__main__': 
     main()
