@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Test Cases",
+      "setup": "",
+      "run": "curl -o script_lab6 https://raw.githubusercontent.com/jjohn163/example/main/Labs/Lab06/script_lab6; chmod 755 script_lab6; ./script_lab6",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    }
+  ]
+}
