@@ -22,9 +22,9 @@ def selection_sort(listy):
 def insertion_sort(listy):
     comparisons = 0
     for i in range(len(listy) - 1):
+        comparisons += 1
         sortInd = i + 1
         if listy[sortInd] < listy[i]:
-            comparisons += 1
             j = i
             ind2 = sortInd
             while j >= 0:
