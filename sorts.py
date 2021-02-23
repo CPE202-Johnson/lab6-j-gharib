@@ -1,6 +1,8 @@
 import random
 import time
 
+#[] -> int
+#Perform a selection sort on a list and return how many comparisons were made
 def selection_sort(listy):
     comparisons = 0
     ind = -1
@@ -18,7 +20,8 @@ def selection_sort(listy):
             listy[i] = minVal
     return comparisons
 
-    
+#[] -> int
+#Perform an insertion sort on a list and return how many comparisons were made
 def insertion_sort(listy):
     comparisons = 0
     for i in range(len(listy) - 1):
@@ -49,13 +52,11 @@ def main():
     # Generate 5000 random numbers from 0 to 999,999
     totalComps = 0
     start_time = time.time() 
-    for i in range(10):
-        randoms = random.sample(range(1000000), 2000)
-        totalComps += insertion_sort(randoms)
-        #totalComps += selection_sort(randoms)
+    randoms = random.sample(range(1000000), 32000)
+    #totalComps += insertion_sort(randoms)
+    totalComps += selection_sort(randoms)
     stop_time = time.time()
-    totalComps /= 10
-    print("Avg comps: " + str(totalComps) + " | Avg time: " + str("{0:0.3f}".format((stop_time - start_time)/10 * 1000)) + "ms")
+    print("Time: " + str("{0:0.3f}".format((stop_time - start_time))) + " seconds")
 
 
 if __name__ == '__main__': 
